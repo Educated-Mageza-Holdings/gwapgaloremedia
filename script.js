@@ -56,8 +56,26 @@ const contactForm = document.querySelector('.contact-form form');
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        alert('Thank you for your message! We will get back to you soon.');
+
+        // Get form values
+        const name = contactForm.querySelector('input[type="text"]').value;
+        const email = contactForm.querySelector('input[type="email"]').value;
+        const message = contactForm.querySelector('textarea').value;
+
+        // Create WhatsApp message
+        const whatsappMessage = `Hello, my name is ${name}.\n\nEmail: ${email}\n\nMessage: ${message}`;
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        const whatsappNumber = '27764657806'; // 076 465 7806
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+        // Show notification
+        alert('We have received your message and we will contact you with further details. You will now be redirected to WhatsApp.');
+
+        // Reset form
         contactForm.reset();
+
+        // Redirect to WhatsApp
+        window.open(whatsappURL, '_blank');
     });
 }
 
