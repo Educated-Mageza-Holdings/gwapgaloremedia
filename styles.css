@@ -6,22 +6,28 @@
 }
 
 :root {
-    --primary-color: #0D47A1;
-    --secondary-color: #1976D2;
+    --primary-color: #800000;
+    --secondary-color: #9B2335;
     --accent-color: #00C853;
     --gold-color: #FFB300;
-    --dark-color: #1A237E;
+    --dark-color: #5C0000;
     --light-color: #F5F7FA;
     --text-color: #2C3E50;
     --white: #ffffff;
-    --gradient-primary: linear-gradient(135deg, #0D47A1 0%, #1976D2 100%);
+    --gradient-primary: linear-gradient(135deg, #800000 0%, #9B2335 100%);
     --gradient-accent: linear-gradient(135deg, #00C853 0%, #00E676 100%);
     --gradient-gold: linear-gradient(135deg, #FFB300 0%, #FFC107 100%);
-    --gradient-energy: linear-gradient(135deg, #0D47A1 0%, #00C853 50%, #FFB300 100%);
+    --gradient-energy: linear-gradient(135deg, #800000 0%, #00C853 50%, #FFB300 100%);
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
     --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
     --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -29,14 +35,35 @@ body {
     line-height: 1.7;
     color: var(--text-color);
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
     font-weight: 400;
     letter-spacing: 0.3px;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    max-width: 100%;
 }
 
 .container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Navigation */
@@ -645,7 +672,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(13, 71, 161, 0.6);
+    background: rgba(128, 0, 0, 0.6);
     opacity: 1;
     transition: opacity 0.4s ease;
     pointer-events: none;
@@ -796,8 +823,34 @@ body {
 
 .benefits-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Optimize layout for 5 items */
+@media (min-width: 1200px) {
+    .benefits-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .benefits-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .benefits-grid .benefit-item:nth-child(4),
+    .benefits-grid .benefit-item:nth-child(5) {
+        grid-column: span 1;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .benefit-item {
@@ -884,58 +937,6 @@ body {
     transform: scale(1);
 }
 
-.benefit-item-large {
-    grid-column: span 2;
-}
-
-.benefit-icon-box {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(139, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.03) 100%);
-    border-radius: 12px;
-    border: 2px solid rgba(139, 0, 0, 0.15);
-    transition: all 0.3s ease;
-}
-
-.benefit-item:hover .benefit-icon-box {
-    background: linear-gradient(135deg, rgba(139, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.08) 100%);
-    border-color: var(--primary-color);
-    transform: translateY(-5px) scale(1.05);
-}
-
-.benefit-svg {
-    width: 36px;
-    height: 36px;
-    color: var(--primary-color);
-    transition: all 0.3s ease;
-}
-
-.benefit-item:hover .benefit-svg {
-    color: var(--secondary-color);
-    transform: scale(1.1);
-}
-
-.benefit-item h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
-    color: var(--secondary-color);
-}
-
-.benefit-item p {
-    color: #666;
-    font-size: 0.95rem;
-}
-
-.benefit-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-}
 
 /* Training Section */
 .training {
@@ -1443,7 +1444,7 @@ body {
 
 .partners-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem;
     max-width: 1400px;
     margin: 0 auto;
@@ -1917,7 +1918,7 @@ body {
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(13, 71, 161, 0.1);
+    box-shadow: 0 0 0 4px rgba(128, 0, 0, 0.1);
 }
 
 .contact-form input:focus + i,
