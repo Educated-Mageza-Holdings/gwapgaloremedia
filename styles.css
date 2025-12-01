@@ -180,7 +180,7 @@ img, video {
 
 /* Hero Section */
 .hero {
-    background: url('billboard2.png') center center no-repeat;
+    background: url('dec.jpg') center center no-repeat;
     background-size: cover;
     background-attachment: scroll;
     color: var(--white);
