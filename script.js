@@ -63,10 +63,23 @@ const fadeInObserver = new IntersectionObserver((entries) => {
 
 // Observe sections with staggered animation
 document.querySelectorAll('section').forEach((section, index) => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(40px)';
-    section.style.transition = `opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s`;
-    fadeInObserver.observe(section);
+    // Skip hiding sections that contain images (sponsors, partners, stakeholders, benefits, gallery)
+    const shouldAnimate = !section.classList.contains('sponsors') &&
+                         !section.classList.contains('partners') &&
+                         !section.classList.contains('stakeholders') &&
+                         !section.classList.contains('benefits') &&
+                         !section.classList.contains('gallery');
+
+    if (shouldAnimate) {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(40px)';
+        section.style.transition = `opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s`;
+        fadeInObserver.observe(section);
+    } else {
+        // Ensure image sections are always visible
+        section.style.opacity = '1';
+        section.style.transform = 'translateY(0)';
+    }
 });
 
 // Add class when element becomes visible
@@ -349,9 +362,90 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Gallery Modal Functions
+function openEventModal(eventId) {
+    const modal = document.getElementById('eventModal');
+    const modalContent = document.getElementById('modalContent');
+    const eventCollection = document.getElementById(eventId);
+
+    if (modal && modalContent && eventCollection) {
+        // Clone the event collection content
+        const clonedContent = eventCollection.cloneNode(true);
+        clonedContent.style.display = 'block';
+
+        // Clear modal content and add new content
+        modalContent.innerHTML = '';
+        modalContent.appendChild(clonedContent);
+
+        // Show modal with animation
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+        console.log(`✅ Opened gallery for: ${eventId}`);
+    } else {
+        console.error(`❌ Could not open modal for: ${eventId}`);
+    }
+}
+
+function closeEventModal() {
+    const modal = document.getElementById('eventModal');
+
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+
+        console.log('✅ Closed event modal');
+    }
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeEventModal();
+    }
+});
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Gwap Galore Media - Runners website loaded successfully! 🏃‍♂️⚡');
+
+    // Initialize AOS (Animate On Scroll) library
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    }
+
+    // Force visibility for image sections
+    const imageSections = document.querySelectorAll('.sponsors, .partners, .stakeholders, .benefits, .gallery');
+    imageSections.forEach(section => {
+        section.style.opacity = '1';
+        section.style.visibility = 'visible';
+        section.style.display = 'block';
+    });
+
+    // Force visibility for all images
+    const allImages = document.querySelectorAll('.sponsor-item img, .partner-item img, .stakeholder-item img, .benefit-image-wrapper img, .event-tile img');
+    allImages.forEach(img => {
+        img.style.opacity = '1';
+        img.style.visibility = 'visible';
+        img.style.display = 'block';
+
+        // Log image load status
+        img.addEventListener('load', () => {
+            console.log(`✅ Image loaded successfully: ${img.src}`);
+        });
+
+        img.addEventListener('error', () => {
+            console.error(`❌ Failed to load image: ${img.src}`);
+            img.style.border = '3px solid red';
+            img.style.minHeight = '100px';
+            img.alt = `FAILED: ${img.alt}`;
+        });
+    });
 
     // Add smooth reveal to hero content
     const heroContent = document.querySelector('.hero-content');

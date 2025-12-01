@@ -24,6 +24,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#community">Community</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#sponsors">Sponsors</a></li>
                 <li><a href="#partners">Partners</a></li>
                 <li><a href="#stakeholders">Stakeholders</a></li>
@@ -333,6 +334,274 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Event Gallery</span>
+                <h2 class="section-title">Marathon Memories</h2>
+                <p class="section-description">Browse our marathon events by date - click on any event to view the full gallery</p>
+            </div>
+
+            <!-- Date Folders Grid -->
+            <div class="gallery-folders">
+                <!-- Folder 1: 15 December 2024 -->
+                <div class="event-folder" data-aos="fade-up" data-aos-delay="0" onclick="openEventModal('event-dec-15')">
+                    <div class="folder-icon">
+                        <i class="fas fa-folder"></i>
+                        <span class="folder-badge">9 Photos</span>
+                    </div>
+                    <div class="folder-header">
+                        <div class="folder-date">
+                            <span class="date-day">15</span>
+                            <span class="date-month">DEC 2024</span>
+                        </div>
+                    </div>
+                    <div class="folder-preview">
+                        <img src="one.jpeg" alt="Event Preview" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                        <div class="folder-overlay">
+                            <i class="fas fa-folder-open"></i>
+                            <span>Click to View</span>
+                        </div>
+                    </div>
+                    <div class="folder-content">
+                        <h3>Stay Fresh Legacy Marathon 2024</h3>
+                        <p>Complete coverage of all events from this day</p>
+                        <div class="folder-stats">
+                            <span><i class="fas fa-images"></i> 3 Events</span>
+                            <span><i class="fas fa-users"></i> 1000+ Runners</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Folder 2: March 2025 Event (Example) -->
+                <div class="event-folder" data-aos="fade-up" data-aos-delay="100" onclick="openEventModal('event-mar-15')">
+                    <div class="folder-icon">
+                        <i class="fas fa-folder"></i>
+                        <span class="folder-badge">Coming Soon</span>
+                    </div>
+                    <div class="folder-header">
+                        <div class="folder-date">
+                            <span class="date-day">15</span>
+                            <span class="date-month">MAR 2025</span>
+                        </div>
+                    </div>
+                    <div class="folder-preview">
+                        <img src="billboard2.png" alt="Upcoming Event" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                        <div class="folder-overlay">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Upcoming Event</span>
+                        </div>
+                    </div>
+                    <div class="folder-content">
+                        <h3>Spring Marathon 2025</h3>
+                        <p>Get ready for our next exciting event</p>
+                        <div class="folder-stats">
+                            <span><i class="fas fa-clock"></i> Coming Soon</span>
+                            <span><i class="fas fa-ticket-alt"></i> Register Now</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Folder 3: June 2025 Event (Example) -->
+                <div class="event-folder" data-aos="fade-up" data-aos-delay="200" onclick="openEventModal('event-jun-15')">
+                    <div class="folder-icon">
+                        <i class="fas fa-folder"></i>
+                        <span class="folder-badge">Planned</span>
+                    </div>
+                    <div class="folder-header">
+                        <div class="folder-date">
+                            <span class="date-day">15</span>
+                            <span class="date-month">JUN 2025</span>
+                        </div>
+                    </div>
+                    <div class="folder-preview">
+                        <img src="billboard1.png" alt="Future Event" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                        <div class="folder-overlay">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>Save the Date</span>
+                        </div>
+                    </div>
+                    <div class="folder-content">
+                        <h3>Mid-Year Challenge 2025</h3>
+                        <p>Mark your calendars for this event</p>
+                        <div class="folder-stats">
+                            <span><i class="fas fa-bell"></i> Stay Tuned</span>
+                            <span><i class="fas fa-star"></i> Premium Event</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-divider">
+            <div class="divider-line"></div>
+            <div class="divider-icon"><i class="fas fa-camera"></i></div>
+            <div class="divider-line"></div>
+        </div>
+    </section>
+
+    <!-- Event Modal -->
+    <div id="eventModal" class="event-modal">
+        <div class="modal-overlay" onclick="closeEventModal()"></div>
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeEventModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-content" id="modalContent">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Event Content Templates -->
+    <div style="display: none;">
+        <!-- December 15, 2024 Events -->
+        <div id="event-dec-15" class="event-collection">
+            <div class="event-collection-header">
+                <h2>15 December 2024 - Stay Fresh Legacy Marathon</h2>
+                <p>A day filled with passion, competition, and community spirit</p>
+            </div>
+            <div class="event-tiles-grid">
+                <!-- Event 1: Main Marathon -->
+                <div class="event-tile-modal">
+                    <div class="event-tile-header">
+                        <div class="event-badge">
+                            <i class="fas fa-trophy"></i>
+                            <span>Main Event</span>
+                        </div>
+                    </div>
+                    <div class="event-images">
+                        <div class="main-image">
+                            <img src="one.jpeg" alt="Marathon Main Event" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                        </div>
+                        <div class="event-thumbnails">
+                            <img src="two.jpeg" alt="Event Photo 2" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                            <img src="three.jpeg" alt="Event Photo 3" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Stay Fresh Legacy Marathon</h3>
+                        <p class="event-description">The main marathon event featuring 5km, 8km, and 10km races with over 1000+ participants</p>
+                        <div class="event-stats">
+                            <div class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>1000+ Runners</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-route"></i>
+                                <span>3 Distances</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2: Winners -->
+                <div class="event-tile-modal">
+                    <div class="event-tile-header">
+                        <div class="event-badge winners">
+                            <i class="fas fa-medal"></i>
+                            <span>Winners</span>
+                        </div>
+                    </div>
+                    <div class="event-images">
+                        <div class="main-image">
+                            <img src="winner.jpeg" alt="Winners Celebration" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                        </div>
+                        <div class="event-thumbnails">
+                            <img src="winner2.jpeg" alt="Winner 2" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                            <img src="winner3.jpeg" alt="Winner 3" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Champions Crowned</h3>
+                        <p class="event-description">Celebrating our top performers who pushed their limits and achieved greatness</p>
+                        <div class="event-stats">
+                            <div class="stat">
+                                <i class="fas fa-trophy"></i>
+                                <span>20+ Winners</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-gift"></i>
+                                <span>Prizes & Medals</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3: Community -->
+                <div class="event-tile-modal">
+                    <div class="event-tile-header">
+                        <div class="event-badge community">
+                            <i class="fas fa-heart"></i>
+                            <span>Community</span>
+                        </div>
+                    </div>
+                    <div class="event-images">
+                        <div class="main-image">
+                            <img src="together.jpeg" alt="Community Together" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                        </div>
+                        <div class="event-thumbnails">
+                            <img src="four.jpeg" alt="Community Photo 2" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                            <img src="five.jpeg" alt="Community Photo 3" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                        </div>
+                    </div>
+                    <div class="event-content">
+                        <h3>Running Together</h3>
+                        <p class="event-description">Our community coming together, supporting each other, and creating lasting memories</p>
+                        <div class="event-stats">
+                            <div class="stat">
+                                <i class="fas fa-hands-helping"></i>
+                                <span>Unity & Support</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-smile"></i>
+                                <span>Unforgettable</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- March 15, 2025 Events Template -->
+        <div id="event-mar-15" class="event-collection">
+            <div class="event-collection-header">
+                <h2>15 March 2025 - Spring Marathon</h2>
+                <p>Photos and highlights coming soon after the event!</p>
+            </div>
+            <div class="event-tiles-grid">
+                <div class="coming-soon-message">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Event Coming Soon</h3>
+                    <p>Register now to be part of this exciting event</p>
+                    <a href="https://computicket-boxoffice.com/e/the-stay-fresh-legacy-marathon-4vbKZ1" target="_blank" class="cta-button cta-primary">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>Buy Tickets</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- June 15, 2025 Events Template -->
+        <div id="event-jun-15" class="event-collection">
+            <div class="event-collection-header">
+                <h2>15 June 2025 - Mid-Year Challenge</h2>
+                <p>Details and registration opening soon!</p>
+            </div>
+            <div class="event-tiles-grid">
+                <div class="coming-soon-message">
+                    <i class="fas fa-info-circle"></i>
+                    <h3>Save the Date</h3>
+                    <p>More information will be available closer to the date</p>
+                    <a href="#contact" class="cta-button cta-secondary">
+                        <i class="fas fa-envelope"></i>
+                        <span>Get Notified</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Sponsors Section -->
     <section id="sponsors" class="sponsors">
         <div class="container">
@@ -341,22 +610,22 @@
                 <h2 class="section-title">Powered By Excellence</h2>
                 <p class="section-description">Thank you to our amazing sponsors for making this event possible</p>
             </div>
-            <div class="sponsors-grid">
-                <div class="sponsor-item" data-aos="fade-up" data-aos-delay="0">
-                    <div class="sponsor-wrapper">
-                        <img src="harmony.png" alt="Harmony">
+            <div class="sponsors-grid" style="display: grid !important; visibility: visible !important;">
+                <div class="sponsor-item" data-aos="fade-up" data-aos-delay="0" style="display: flex !important;">
+                    <div class="sponsor-wrapper" style="display: flex !important;">
+                        <img src="harmony.png" alt="Harmony" style="display: block !important; visibility: visible !important; opacity: 1 !important; width: 100% !important; height: 100% !important;" onerror="console.error('Failed to load: harmony.png'); this.style.border='2px solid red';">
                         <div class="sponsor-shine"></div>
                     </div>
                 </div>
-                <div class="sponsor-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="sponsor-wrapper">
-                        <img src="fnb.jpg" alt="FNB">
+                <div class="sponsor-item" data-aos="fade-up" data-aos-delay="100" style="display: flex !important;">
+                    <div class="sponsor-wrapper" style="display: flex !important;">
+                        <img src="fnb.jpg" alt="FNB" style="display: block !important; visibility: visible !important; opacity: 1 !important; width: 100% !important; height: 100% !important;" onerror="console.error('Failed to load: fnb.jpg'); this.style.border='2px solid red';">
                         <div class="sponsor-shine"></div>
                     </div>
                 </div>
-                <div class="sponsor-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="sponsor-wrapper">
-                        <img src="gfc.jpeg" alt="GFC">
+                <div class="sponsor-item" data-aos="fade-up" data-aos-delay="200" style="display: flex !important;">
+                    <div class="sponsor-wrapper" style="display: flex !important;">
+                        <img src="gfc.jpeg" alt="GFC" style="display: block !important; visibility: visible !important; opacity: 1 !important; width: 100% !important; height: 100% !important;" onerror="console.error('Failed to load: gfc.jpeg'); this.style.border='2px solid red';">
                         <div class="sponsor-shine"></div>
                     </div>
                 </div>
@@ -377,34 +646,34 @@
                 <h2 class="section-title">Together We Achieve More</h2>
                 <p class="section-description">Special thanks to our incredible partners who help make our events unforgettable</p>
             </div>
-            <div class="partners-grid">
-                <div class="partner-item" data-aos="zoom-in" data-aos-delay="0">
-                    <div class="partner-wrapper">
-                        <img src="partner1.jpeg" alt="Partner 1">
+            <div class="partners-grid" style="display: grid !important; visibility: visible !important;">
+                <div class="partner-item" data-aos="zoom-in" data-aos-delay="0" style="display: flex !important;">
+                    <div class="partner-wrapper" style="display: flex !important;">
+                        <img src="partner1.jpeg" alt="Partner 1" style="display: block !important; visibility: visible !important; opacity: 1 !important; width: 100% !important; height: 100% !important;" onerror="console.error('Failed to load: partner1.jpeg'); this.style.border='2px solid red';">
                         <div class="partner-overlay">
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
-                <div class="partner-item" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="partner-wrapper">
-                        <img src="partner2.jpeg" alt="Partner 2">
+                <div class="partner-item" data-aos="zoom-in" data-aos-delay="100" style="display: flex !important;">
+                    <div class="partner-wrapper" style="display: flex !important;">
+                        <img src="partner2.jpeg" alt="Partner 2" style="display: block !important; visibility: visible !important; opacity: 1 !important; width: 100% !important; height: 100% !important;" onerror="console.error('Failed to load: partner2.jpeg'); this.style.border='2px solid red';">
                         <div class="partner-overlay">
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
-                <div class="partner-item" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="partner-wrapper">
-                        <img src="gwap.jpg" alt="Gwap Galore Media">
+                <div class="partner-item" data-aos="zoom-in" data-aos-delay="200" style="display: flex !important;">
+                    <div class="partner-wrapper" style="display: flex !important;">
+                        <img src="gwap.jpg" alt="Gwap Galore Media" style="display: block !important; visibility: visible !important; opacity: 1 !important; width: 100% !important; height: 100% !important;" onerror="console.error('Failed to load: gwap.jpg'); this.style.border='2px solid red';">
                         <div class="partner-overlay">
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
                 </div>
-                <div class="partner-item" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="partner-wrapper">
-                        <img src="em.png" alt="Educated Mageza Holdings">
+                <div class="partner-item" data-aos="zoom-in" data-aos-delay="300" style="display: flex !important;">
+                    <div class="partner-wrapper" style="display: flex !important;">
+                        <img src="em.png" alt="Educated Mageza Holdings" style="display: block !important; visibility: visible !important; opacity: 1 !important; width: 100% !important; height: 100% !important;" onerror="console.error('Failed to load: em.png'); this.style.border='2px solid red';">
                         <div class="partner-overlay">
                             <i class="fas fa-star"></i>
                         </div>
@@ -427,10 +696,10 @@
                 <h2 class="section-title">Supported By Leaders</h2>
                 <p class="section-description">Recognizing the valued stakeholders who support our community</p>
             </div>
-            <div class="stakeholders-grid">
-                <div class="stakeholder-item" data-aos="fade-up">
-                    <div class="stakeholder-wrapper">
-                        <img src="mogalecity.png" alt="Mogale City">
+            <div class="stakeholders-grid" style="display: grid !important; visibility: visible !important; max-width: 500px !important; margin: 0 auto !important; justify-content: center !important;">
+                <div class="stakeholder-item" data-aos="fade-up" style="display: flex !important; min-height: 180px !important; max-height: 200px !important; padding: 2rem !important;">
+                    <div class="stakeholder-wrapper" style="display: flex !important;">
+                        <img src="mogalecity.png" alt="Mogale City" style="display: block !important; visibility: visible !important; opacity: 1 !important; max-width: 250px !important; max-height: 150px !important; width: auto !important; height: auto !important;" onerror="console.error('Failed to load: mogalecity.png'); this.style.border='2px solid red';">
                         <div class="stakeholder-badge">
                             <i class="fas fa-shield-alt"></i>
                             <span>Official Partner</span>
@@ -494,21 +763,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="contact-form" data-aos="fade-left">
-                    <form>
+                <div class="contact-form" data-aos="fade-left" style="display: block !important; visibility: visible !important; opacity: 1 !important;">
+                    <form style="display: flex !important; flex-direction: column !important; gap: 1rem !important;">
                         <div class="form-group">
+                            <input type="text" placeholder="Your Name" required style="display: block !important;">
                             <i class="fas fa-user"></i>
-                            <input type="text" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
+                            <input type="email" placeholder="Your Email" required style="display: block !important;">
                             <i class="fas fa-envelope"></i>
-                            <input type="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required style="display: block !important;"></textarea>
                             <i class="fas fa-comment-alt"></i>
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="submit-button">
+                        <button type="submit" class="submit-button" style="display: inline-flex !important;">
                             <span>Send Message</span>
                             <i class="fas fa-paper-plane"></i>
                         </button>
