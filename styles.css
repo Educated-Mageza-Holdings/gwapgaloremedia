@@ -183,13 +183,16 @@ img, video {
     background: url('girl.jpg') center center no-repeat;
     background-size: cover;
     background-attachment: scroll;
+    background-position: center center;
     color: var(--white);
     padding: 150px 20px 100px;
     text-align: center;
     margin-top: 70px;
     position: relative;
     overflow: hidden;
-    min-height: 500px;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
 }
 
 .hero::before {
@@ -208,6 +211,7 @@ img, video {
     z-index: 1;
     max-width: 1000px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .hero-badge {
@@ -324,6 +328,104 @@ img, video {
     }
     60% {
         transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Hero Responsive Styles */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 500px;
+        padding: 100px 15px 80px;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .hero-title-main {
+        font-size: 2.5rem;
+    }
+
+    .hero-title-sub {
+        font-size: 1.3rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .hero-features {
+        gap: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-badge {
+        padding: 0.6rem 1.2rem;
+    }
+
+    .hero-badge span {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 450px;
+        padding: 80px 10px 60px;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .hero-title-main {
+        font-size: 2rem;
+    }
+
+    .hero-title-sub {
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-badge {
+        padding: 0.5rem 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-badge i {
+        font-size: 1rem;
+    }
+
+    .hero-badge span {
+        font-size: 0.75rem;
+    }
+
+    .hero-feature {
+        padding: 0.75rem 1.25rem;
+    }
+
+    .hero-feature i {
+        font-size: 1.2rem;
+    }
+
+    .hero-feature span {
+        font-size: 0.85rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 10px;
+    }
+
+    .cta-button {
+        padding: 14px 32px;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
     }
 }
 
